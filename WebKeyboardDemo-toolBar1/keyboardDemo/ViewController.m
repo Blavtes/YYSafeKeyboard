@@ -2,8 +2,8 @@
 //  ViewController.m
 //  keyboardDemo
 //
-//  Created by 谈Xx on 16/4/11.
-//  Copyright © 2016年 谈Xx. All rights reserved.
+//  Created by Blavtes on 16/4/11.
+//  Copyright © 2016年 Blavtes. All rights reserved.
 //
 
 #import "ViewController.h"

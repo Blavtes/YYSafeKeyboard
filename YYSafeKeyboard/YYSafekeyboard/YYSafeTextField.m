@@ -1,17 +1,24 @@
 //
-//  SafeTextField.m
-//  SafeKeyboard
+// YYSafeTextField.m
+//  YYSafeKeyboard
 //
 //  Created by Blavtes on 16/4/7.
-//  Copyright © 2016年 Blavtes. All rights reserved.
+//  Copyright © 2017年 Blavtes. All rights reserved.
 //
 
-#import "SafeTextField.h"
+#import "YYSafeTextField.h"
 
-@implementation SafeTextField
+@implementation YYSafeTextField
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.KBType = YYSafeKeyboardTypeABC;
+    }
+    return self;
+}
 
-- (instancetype)initWithkeyboardType:(SafeKeyboardType)type
+- (instancetype)initWithkeyboardType:(YYSafeKeyboardType)type
 {
     self = [super init];
     if (self) {
@@ -25,7 +32,7 @@
     BOOL bflag = [super becomeFirstResponder];
     if(bflag)
     {
-        SafeKeyboard *kb = (SafeKeyboard *)self.inputView;
+        YYSafeKeyboard *kb = (YYSafeKeyboard *)self.inputView;
         kb.inputSource = self;
         [kb setRandomNumberText];
     }
@@ -34,7 +41,7 @@
 
 - (BOOL)resignFirstResponder
 {
-    SafeKeyboard *kb = (SafeKeyboard *)self.inputView;
+    YYSafeKeyboard *kb = (YYSafeKeyboard *)self.inputView;
     kb.inputSource = nil;
     BOOL ret = [super resignFirstResponder];
     if (self.safeTextDelegate && [self.safeTextDelegate respondsToSelector:@selector(safeTextFieldDidResignFirstResponder:)])
@@ -54,10 +61,10 @@
 }
 
 #pragma mark - setter
--(void)setKBType:(SafeKeyboardType)KBType
+-(void)setKBType:(YYSafeKeyboardType)KBType
 {
     _KBType = KBType;
-    SafeKeyboard *keyboard = [SafeKeyboard keyboardWithType:KBType];
+    YYSafeKeyboard *keyboard = [YYSafeKeyboard keyboardWithType:KBType];
     self.inputView = keyboard;
     keyboard.inputSource = self;
 }

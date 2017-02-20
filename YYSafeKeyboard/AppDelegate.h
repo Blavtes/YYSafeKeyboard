@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  keyboardDemo
+//  YYSafeKeyboard
 //
-//  Created by Blavtes on 16/4/11.
-//  Copyright © 2016年 Blavtes. All rights reserved.
+//  Created by Blavtes on 17/1/2.
+//  Copyright © 2017年 Blavtes. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
